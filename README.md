@@ -9,7 +9,7 @@ There are very few universal identifiers, though there are some common identifie
 
 Some possibilities:
 
-1. A format/protocol for generating non-colliding ids?
+## 1. A format/protocol for generating non-colliding ids?
 
 e.g. `com.publisher.screen123`
 
@@ -24,10 +24,10 @@ Perhaps formatted as
 
 Perhaps "Publisher ID" could also be a rating agency - e.g. `org.geopath` or something like that
 
-2. Some kind of registry?
+## 2. Some kind of registry?
 
 This seems... hard
 
-3. Delegate to an existing standard?
+## 3. Delegate to an existing standard?
 
 e.g. we could start with 3rd-party rating... but that also seems hard

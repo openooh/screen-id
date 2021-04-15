@@ -17,7 +17,7 @@ Admittedly - this kind of approach somewhat assumes a standardized id for publis
 
 Perhaps formatted as
 
-|| Section    || Format.    || Example || Description                                                           ||
+| Section      | Format      | Example  | Description                                                            |
 | ------------ | ----------- | -------- | ---------------------------------------------------------------------- |
 | Publisher ID | Reverse-TLD | com.pub  | Reverse DNS of a gTLD (similar to OpenRTB's `adomain` that is          |
 | Screen ID.   | String      | 12345678 | Format determined by the publisher, expected to be immutable over time |

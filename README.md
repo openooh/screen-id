@@ -9,25 +9,26 @@ There are very few universal identifiers, though there are some common identifie
 
 Some possibilities:
 
-## 1. A format/protocol for generating non-colliding ids?
+## 1. A format/protocol for generating non-colliding ids
+
+This seems the most promising - though it requires a standardized id to namespace publishers
 
 e.g. `com.publisher.screen123`
-
-Admittedly - this kind of approach somewhat assumes a standardized id for publishers :) But - that also seems like it would be a useful building block
 
 Perhaps formatted as
 
 | Section      | Format      | Example  | Description                                                            |
 | ------------ | ----------- | -------- | ---------------------------------------------------------------------- |
-| Publisher ID | Reverse-TLD | com.pub  | Reverse DNS of a gTLD (similar to OpenRTB's `adomain` that is          |
-| Screen ID.   | String      | 12345678 | Format determined by the publisher, expected to be immutable over time |
+| Publisher ID | Reverse-TLD | com.pub  | Reverse DNS of a gTLD (similar to OpenRTB's `adomain`                                                |
+| Screen ID    | String      | 12345678 | Format determined by the publisher, expected to be immutable over time - perhaps 128 character limit |
 
-Perhaps "Publisher ID" could also be a rating agency - e.g. `org.geopath` or something like that
+Some tradeoffs to consider:
 
-## 2. Some kind of registry?
+* Perhaps "Publisher ID" could also be a rating agency - e.g. `org.geopath` instead of a specific publisher's domain, if the publisher decided that was preferable
+* If we want to handle de-duplication, compliant suppliers could be required to pass along the original id (or explicitely not pass it if transparent) - perhaps consistent with the IAB Supply Chain concepts around reseller - e.g. in a way that's consistent with sellers.json, and ads.txt and that world of standards
+* DNS is "nice and human readable" but does tend to change with companies marketing, branding, and M&A status... though it seems really nice not to have a central registry
+* Limits would be nice - what's the max reasonable? UUID length? Something longer?
 
-This seems... hard
+## 2. Some kind of registry
 
-## 3. Delegate to an existing standard?
-
-e.g. we could start with 3rd-party rating... but that also seems hard
+This seems... hard to maintain and undesireable - though I suppose it could just be a CSV in this repo or something else that pubs are expected to keep up to date

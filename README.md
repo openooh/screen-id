@@ -29,6 +29,24 @@ Some tradeoffs to consider:
 * DNS is "nice and human readable" but does tend to change with companies marketing, branding, and M&A status... though it seems really nice not to have a central registry
 * Limits would be nice - what's the max reasonable? UUID length? Something longer?
 
+How do we pass this? Another OpenRTB extension, with perhaps some names if serialized? e.g.
+
+```json
+
+"ext"{
+  "dooh": {
+    "id": {
+      "primary": "com.pub:12345678"
+    }
+  }
+}
+
+```
+
+Alternatively - re-use an existing field by convention (`tagid` might be attractive) - perhaps also some kind of URL mapping scheme/recommendation
+
+Do we want to go further and do discovery? e.g. pub.com/screen/12345678 should have human or machine readable information would be... really cool....
+
 ## 2. Some kind of registry
 
 This seems... hard to maintain and undesireable - though I suppose it could just be a CSV in this repo or something else that pubs are expected to keep up to date

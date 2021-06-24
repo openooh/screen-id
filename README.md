@@ -47,7 +47,8 @@ Benefits:
 Problems:
 
 * Moving assets (already a hard problem) are also a hard-problem in this case. While it's possible we could handle that definitionally (e.g. instead of providing a "screen identifier" maybe buyers / DSPs are generally more interested in "where did people see an ad" in which case geographic keys seem very interesting
-
+* For Placekey in particular... ID may change as businesses change. We are working in advertising though, maybe that's desireable?
+ 
 ## 2. A format/protocol for exchanging IDs
 
 How do we pass this? Another OpenRTB extension, with perhaps some names if serialized? e.g.

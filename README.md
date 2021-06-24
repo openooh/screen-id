@@ -50,12 +50,14 @@ Problems:
 
 How do we pass this? Another OpenRTB extension, with perhaps some names if serialized? e.g.
 
-```json
+```jsonc
 
 "ext"{
   "dooh": {
-    "id": {
-      "primary": "com.pub:12345678"
+    "screen-id": "com.pub:12345678".
+    "aliases": { //optional
+      "billing": "id456",
+      "internal": "abc123"
     }
   }
 }

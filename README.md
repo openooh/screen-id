@@ -37,6 +37,8 @@ Alternatively, we could try to come up with a universal scheme - though as oppos
 
 One interesting tangential spec is: [PlaceKey](https://www.placekey.io/). In particular, their format (built on Uber's H3) has a notion of geo-spatial locations baked in, which is a possible case for conflation.
 
+![Placekey Structure](https://assets.website-files.com/5f277eb85e5f02d500828d71/5f5034a9ec19138658daa4b0_placekey_explained.png)!
+
 Benefits:
 
 * Geospatial could greatly help with the problem of conflation

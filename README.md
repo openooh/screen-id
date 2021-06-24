@@ -11,7 +11,9 @@ Some possibilities:
 
 ## 1. A format/protocol for generating non-colliding ids
 
-This seems the most promising - though it requires a standardized id to namespace publishers
+This seems the most promising - though it requires a standardized id or to namespace on something to allow independence
+
+### 1a. Publisher-Namespaced IDs
 
 e.g. `com.publisher.screen123`
 
@@ -28,6 +30,23 @@ Some tradeoffs to consider:
 * If we want to handle de-duplication, compliant suppliers could be required to pass along the original id (or explicitely not pass it if transparent) - perhaps consistent with the IAB Supply Chain concepts around reseller - e.g. in a way that's consistent with sellers.json, and ads.txt and that world of standards
 * DNS is "nice and human readable" but does tend to change with companies marketing, branding, and M&A status... though it seems really nice not to have a central registry
 * Limits would be nice - what's the max reasonable? UUID length? Something longer?
+
+### 1b. Universal IDs
+
+Alternatively, we could try to come up with a universal scheme - though as opposed to many scenarios where the only thing you care about is non-collisions (e.g. UUIDs, other GUID schemes) in our case [Conflation](https://en.wikipedia.org/wiki/Conflation) is an important case (e.g. "de-duplication" of screen identifiers, especially for the purpose of joining information.
+
+One interesting tangential spec is: [PlaceKey](https://www.placekey.io/). In particular, their format (built on Uber's H3) has a notion of geo-spatial locations baked in, which is a possible case for conflation.
+
+Benefits:
+
+* Geospatial could greatly help with the problem of conflation
+* Geospatial is a powerful key to join data to
+
+Problems:
+
+* Moving assets (already a hard problem) are also a hard-problem in this case. While it's possible we could handle that definitionally (e.g. instead of providing a "screen identifier" maybe buyers / DSPs are generally more interested in "where did people see an ad" in which case geographic keys seem very interesting
+
+## 2. A format/protocol for exchanging IDs
 
 How do we pass this? Another OpenRTB extension, with perhaps some names if serialized? e.g.
 
